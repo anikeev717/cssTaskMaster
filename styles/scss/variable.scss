@@ -1,0 +1,27 @@
+:root {
+  --primary-font: "Barlow", sans-serif;
+
+  --font-size-xs: 10px;
+  --font-size-ss: 12px;
+  --font-size-s: 14px;
+  --font-size-m: 18px;
+  --font-size-l: 24px;
+  --font-size-xl: 32px;
+
+  --color-main-bg: #eff6ff;
+  --color-main-text: #2a4a5c;
+  --color-fb-button: #255a9b;
+  --color-ln-button: #0076b6;
+  --color-attention-items: #3698fb;
+  --color-second-text: #7b8a92;
+  --color-additional-text-1: #96a5b1;
+  --color-additional-text-2: #afafaf;
+  --base-color-white: #ffffff;
+  --base-color-black: #000000;
+  --add-color: #eeeeee;
+}
+
+html {
+  font-family: var(--primary-font);
+  background-color: var(--color-main-bg);
+}

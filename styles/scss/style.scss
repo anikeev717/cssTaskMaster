@@ -1,0 +1,538 @@
+@import "reset.scss";
+@import "variable.scss";
+@import "mixins.scss";
+.content {
+  width: 100%;
+  height: 100vh;
+  @include flexCenter;
+}
+.logo {
+  position: absolute;
+  max-width: 150px;
+  top: 20px;
+  left: 20px;
+  z-index: 2;
+  &__img {
+    @include imgPr;
+  }
+}
+.background {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  &__img {
+    @include imgPr;
+  }
+}
+.form {
+  position: absolute;
+  margin: 0 20px;
+  border-radius: 15px;
+  background-color: rgba(255, 255, 255, 0.9);
+  box-shadow: 0px 4px 11px rgba(0, 0, 0, 0.26);
+  &__item {
+    padding: 15px 35px;
+  }
+  &__title {
+    color: var(--color-main-text);
+    font-size: var(--font-size-l);
+    @include font600;
+  }
+  &__subtitle {
+    margin: 5px 0;
+    color: var(--color-second-text);
+    font-size: var(--font-size-s);
+    @include font400;
+  }
+  &__buttons {
+    @include flexSpB;
+    flex-flow: row wrap;
+  }
+  &__button {
+    @include flexCenter;
+    @include font400;
+    flex-basis: 47.5%;
+    position: relative;
+    height: 30px;
+    margin: 5px 0;
+    color: var(--base-color-white);
+    font-size: var(--font-size-xs);
+    letter-spacing: -0.03em;
+    cursor: pointer;
+    transition: all 0.05s;
+
+    &:hover {
+      filter: brightness(120%);
+    }
+    &:active {
+      box-shadow: inset 0px 0px 5px 0px rgb(0 0 0 / 70%);
+    }
+    &-facebook {
+      background-color: var(--color-fb-button);
+    }
+    &-facebook::before {
+      @include socialIcon;
+      background-image: url(../../img/facebook.svg);
+    }
+    &-linkedin {
+      background-color: var(--color-ln-button);
+    }
+    &-linkedin::before {
+      @include socialIcon;
+      background-image: url(../../img/linkedin.svg);
+    }
+  }
+  &__line {
+    position: relative;
+    width: 75%;
+    margin: 10px auto;
+    border-bottom: 1px solid var(--add-color);
+    text-align: center;
+    &__text {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      width: 2em;
+      color: var(--base-color-black);
+      font-size: var(--font-size-xs);
+      @include font400;
+    }
+  }
+  &__input {
+    width: 100%;
+    height: 40px;
+    margin: 5px 0;
+    border: 1px solid var(--add-color);
+    box-shadow: 2px 2px 5px rgb(0 0 0 / 5%);
+    &::placeholder {
+      position: absolute;
+      top: 0;
+      left: 0;
+      color: var(--color-second-text);
+      font-size: var(--font-size-xs);
+      @include font400;
+    }
+    &:focus {
+      border-left: 1px solid var(--color-attention-items);
+      outline: 0;
+      outline-offset: 0;
+    }
+  }
+  .radio {
+    &__title {
+      color: var(--color-main-text);
+      font-size: var(--font-size-m);
+      @include font500;
+      letter-spacing: -0.02em;
+    }
+    &__subtitle {
+      color: var(--color-second-text);
+      font-size: var(--font-size-s);
+      @include font400;
+    }
+    &__wrapper {
+      display: flex;
+      flex-flow: row wrap;
+      input[type="radio"]:checked + label::before {
+        border: 3px solid var(--color-attention-items);
+      }
+    }
+    &__label {
+      position: relative;
+      padding: 10px 0 10px 21px;
+      flex-basis: 50%;
+      color: var(--base-color-black);
+      font-size: var(--font-size-s);
+      @include font500;
+      cursor: pointer;
+      &::before {
+        content: "";
+        position: absolute;
+        top: 50%;
+        left: 0;
+        transform: translateY(-50%);
+        display: inline-block;
+        width: 10px;
+        height: 10px;
+        border: 3px solid var(--color-second-text);
+        border-radius: 50%;
+        cursor: pointer;
+      }
+      &::after {
+        content: "";
+        position: absolute;
+        top: 50%;
+        transform: translate(50%, -50%);
+        display: inline-block;
+        width: 5px;
+        height: 5px;
+        border: 1px solid var(--color-second-text);
+        border-radius: 50%;
+      }
+    }
+    &__item {
+      display: none;
+    }
+    &__description {
+      width: 100%;
+      box-shadow: 2px 2px 5px rgb(0 0 0 / 5%);
+      border-radius: 5px;
+      &__item {
+        color: var(--color-second-text);
+        font-size: var(--font-size-s);
+        @include font400;
+      }
+    }
+  }
+  &__submit {
+    display: block;
+    width: 100%;
+    height: 40px;
+    text-align: center;
+    background-color: var(--color-attention-items);
+    border-radius: 5px;
+    color: var(--base-color-white);
+    font-size: var(--font-size-s);
+    font-weight: 600;
+    font-style: normal;
+    line-height: 1.2;
+    &:hover {
+      filter: brightness(120%);
+    }
+    &:active {
+      box-shadow: inset 0px 0px 5px 0px rgb(0 0 0 / 70%);
+    }
+  }
+}
+.checkbox {
+  margin-top: 10px;
+  &__item {
+    cursor: pointer;
+  }
+  &__label {
+    cursor: pointer;
+    color: var(--color-second-text);
+    font-size: var(--font-size-s);
+    @include font400;
+  }
+  &__link {
+    color: var(--color-attention-items);
+    font-size: var(--font-size-s);
+    @include font400;
+  }
+}
+@media screen and (min-width: 576px) {
+  .form {
+    &__title {
+      font-size: var(--font-size-xl);
+    }
+    &__subtitle {
+      margin: 5px 0 15px;
+      font-size: var(--font-size-m);
+    }
+    &__button {
+      flex-basis: 100%;
+      height: 40px;
+      margin: 10px 0;
+      font-size: var(--font-size-m);
+      text-align: center;
+      &-facebook::before,
+      &-linkedin::before {
+        width: 15px;
+        height: 15px;
+        left: 30px;
+      }
+    }
+    &__line {
+      margin: 30px auto;
+      &__text {
+        font-size: var(--font-size-s);
+      }
+    }
+
+    &__input {
+      padding-left: 50px;
+      margin: 10px 0;
+      &::placeholder {
+        font-size: var(--font-size-s);
+      }
+    }
+    .radio {
+      margin-top: 10px;
+      &__title {
+        font-size: var(--font-size-l);
+      }
+      &__subtitle {
+        font-size: var(--font-size-m);
+      }
+      &__wrapper {
+        margin: 10px 0;
+      }
+      &__label {
+        flex-basis: 25%;
+        font-size: var(--font-size-m);
+      }
+      &__description {
+        width: 50%;
+        margin: 10px 0 20px;
+        &__item {
+          font-size: var(--font-size-s);
+        }
+      }
+    }
+    &__submit {
+      font-size: var(--font-size-m);
+    }
+  }
+  .checkbox {
+    text-align: center;
+    &__label,
+    &__link {
+      font-size: var(--font-size-m);
+    }
+  }
+}
+@media screen and (orientation: landscape) and (max-width: 812px) {
+  .logo {
+    left: 35px;
+    &__img {
+      filter: brightness(0);
+    }
+  }
+  .form {
+    margin: 0;
+    &__title {
+      font-size: var(--font-size-l);
+      text-align: right;
+    }
+    &__subtitle {
+      font-size: var(--font-size-s);
+      margin: 5px 0;
+      text-align: right;
+    }
+    &__button {
+      flex-basis: 47.5%;
+    }
+    &__line {
+      margin: 0 auto;
+    }
+    &__inputs {
+      @include flexSpB;
+    }
+    &__input {
+      width: 47.5%;
+    }
+    .radio {
+      margin-top: 0;
+      &__title {
+        font-size: var(--font-size-m);
+      }
+      &__subtitle {
+        font-size: var(--font-size-s);
+      }
+      &__wrapper {
+        position: absolute;
+        transform: translate(100%, -50%);
+      }
+      &__label {
+        flex-basis: 50%;
+      }
+      &__description {
+        margin: 5px 0;
+      }
+    }
+    &__submit {
+      width: 50%;
+      transform: translate(100%, -100%);
+      margin: 0;
+    }
+  }
+  .checkbox {
+    margin: 0;
+    width: 50%;
+    &__label,
+    &__link {
+      font-size: var(--font-size-s);
+    }
+  }
+}
+@media screen and (min-width: 768px) {
+  .background {
+    position: static;
+    width: 52.5%;
+  }
+  .form {
+    position: static;
+    width: 47.5%;
+    height: 100%;
+    margin: 0;
+    box-shadow: none;
+    border-radius: 0;
+
+    &__title {
+      font-size: var(--font-size-xl);
+    }
+    &__subtitle {
+      margin: 5px 0 10px;
+      font-size: var(--font-size-m);
+    }
+    &__button {
+      height: 40px;
+      flex-basis: 47.5%;
+      font-size: var(--font-size-xs);
+      &-facebook::before,
+      &-linkedin::before {
+        left: 10px;
+      }
+    }
+    &__line {
+      margin: 20px auto;
+      width: 50%;
+      &__text {
+        font-size: var(--font-size-xs);
+        background-color: rgba(255, 255, 255, 0.9);
+      }
+    }
+    &__inputs {
+      @include flexSpB;
+    }
+    &__input {
+      width: 47.5%;
+      height: 40px;
+      margin: 10px 0;
+      padding: 0;
+      &::placeholder {
+        font-size: var(--font-size-xs);
+      }
+    }
+    .radio {
+      &__title {
+        margin: 20px 0 5px;
+        font-size: var(--font-size-m);
+      }
+      &__subtitle {
+        font-size: var(--font-size-s);
+      }
+      &__wrapper {
+        margin: 20px 0;
+      }
+      &__label {
+        flex-basis: 50%;
+        font-size: var(--font-size-s);
+      }
+      &__description {
+        width: 100%;
+        &__item {
+          font-size: var(--font-size-s);
+        }
+      }
+    }
+    &__submit {
+      font-size: var(--font-size-s);
+      width: 100%;
+    }
+  }
+  .checkbox {
+    text-align: left;
+    &__label,
+    &__link {
+      font-size: var(--font-size-ss);
+    }
+  }
+}
+@media screen and (min-width: 1025px) {
+  .background {
+    position: static;
+    width: 52.5%;
+  }
+  .form {
+    position: static;
+    width: 47.5%;
+    height: 100%;
+    margin: 0;
+    box-shadow: none;
+    border-radius: 0;
+    &__subtitle {
+      margin: 5px 0 20px;
+    }
+    &__button {
+      font-size: var(--font-size-s);
+    }
+    &__line {
+      &__text {
+        font-size: var(--font-size-s);
+      }
+    }
+    &__input {
+      height: 50px;
+      &::placeholder {
+        font-size: var(--font-size-s);
+      }
+    }
+    .radio {
+      &__title {
+        margin: 30px 0 10px;
+        font-size: var(--font-size-l);
+      }
+      &__subtitle {
+        margin-bottom: 30px;
+      }
+      &__label {
+        flex-basis: 25%;
+        font-size: var(--font-size-s);
+      }
+      &__description {
+        width: 100%;
+      }
+    }
+    &__submit {
+      font-size: var(--font-size-m);
+      width: 50%;
+    }
+  }
+  .checkbox {
+    margin: 20px 0;
+    &__label,
+    &__link {
+      font-size: var(--font-size-ss);
+    }
+  }
+}
+@media screen and (min-width: 1367px) {
+  .content {
+    width: calc(100% - 100px);
+    height: calc(100vh - 100px);
+    position: absolute;
+    transform: translate(50px, 50px);
+  }
+  .form {
+    &__item {
+      padding: 100px 75px;
+    }
+    &__subtitle {
+      margin: 10px 0 30px;
+    }
+    &__button {
+      font-size: var(--font-size-m);
+    }
+    &__line {
+      margin: 30px auto;
+    }
+    .radio {
+      &__label {
+        font-size: var(--font-size-m);
+      }
+      &__description {
+        width: 40%;
+      }
+    }
+  }
+  .checkbox {
+    margin: 30px 0;
+    &__label,
+    &__link {
+      font-size: var(--font-size-s);
+    }
+  }
+}

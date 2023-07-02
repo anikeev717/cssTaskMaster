@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>CSS Task Master</title>
+    <link rel="shortcut icon" href="./img/favicon.png" type="image/x-icon" />
+    <link rel="stylesheet" href="./styles/css/style.css" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Barlow:wght@300;400;500;600&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <div class="content">
+      <div class="logo">
+        <img class="logo__img" src="./img/logo.svg" alt="logo__img" />
+      </div>
+      <div class="background">
+        <img src="./img/bg.jpg" alt="background__img" class="background__img" />
+      </div>
+      <div class="form">
+        <form action="" class="form__item">
+          <h1 class="form__title">Get iintoo it today</h1>
+          <h2 class="form__subtitle">
+            There is no charge or obligation upon registration.
+          </h2>
+          <div class="form__buttons">
+            <a
+              class="form__button form__button-facebook"
+              href="https://www.facebook.com/reg/"
+            >
+              Register with Facebook
+            </a>
+            <a
+              class="form__button form__button-linkedin"
+              href="https://www.linkedin.com/signup"
+            >
+              Register with LinkedIn
+            </a>
+          </div>
+          <div class="form__line"><span class="form__line__text">OR</span></div>
+          <div class="form__inputs">
+            <input
+              type="email"
+              placeholder="Email"
+              class="form__input"
+              name="Email"
+              required
+            />
+            <input
+              type="number"
+              placeholder="Phone"
+              name="Phone"
+              class="form__input"
+              required
+            />
+          </div>
+
+          <div class="radio"></div>
+          <h3 class="radio__title">What type of investor are you?</h3>
+          <p class="radio__subtitle">
+            Select the type of investor you are below.
+          </p>
+          <div class="radio__wrapper">
+            <input
+              class="radio__item"
+              type="radio"
+              name="type"
+              id="radioIndividual"
+              value="individual"
+              checked
+            />
+            <label for="radioIndividual" class="radio__label">
+              Individual
+            </label>
+            <input
+              class="radio__item"
+              type="radio"
+              name="type"
+              id="radioBusiness"
+              value="business"
+            /><label for="radioBusiness" class="radio__label"> Business </label
+            ><input
+              class="radio__item"
+              type="radio"
+              name="type"
+              id="radioIra"
+              value="ira"
+            /><label for="radioIra" class="radio__label"> IRA </label
+            ><input
+              class="radio__item"
+              type="radio"
+              name="type"
+              id="radioTrust"
+              value="trust"
+            /><label for="radioTrust" class="radio__label"> Trust </label>
+          </div>
+          <div class="radio__description">
+            <p class="radio__description__item">
+              I am a natural person investing on my own behalf as a sole owner,
+              joint tenant, or tenant in common.
+            </p>
+          </div>
+          <div class="checkbox">
+            <label for="checkboxAgree" class="checkbox__label"
+              ><input
+                type="checkbox"
+                class="checkbox__item"
+                id="checkboxAgree"
+                name="terms"
+                value="agree"
+                required
+              />I agree to the terms and receiving notifications from iintoo
+            </label>
+            <a href="#" class="checkbox__link">View full terms</a>
+          </div>
+          <button class="form__submit">Create Account</button>
+        </form>
+      </div>
+    </div>
+  </body>
+</html>
