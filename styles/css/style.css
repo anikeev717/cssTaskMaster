@@ -396,7 +396,7 @@ html {
     font-size: var(--font-size-m);
   }
 }
-@media screen and (orientation: landscape) and (max-width: 812px) {
+@media screen and (orientation: landscape) and (max-width: 767px) {
   .logo {
     left: 35px;
   }
